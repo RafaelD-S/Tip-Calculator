@@ -1,0 +1,166 @@
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-cyan: hsl(186, 14%, 43%);
+    --cyan: hsl(184, 14%, 56%);
+    --light-cyan: hsl(185, 41%, 84%);
+    --Very-light-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', Arial, Helvetica, sans-serif;
+}
+input {
+    font-size: 1.5rem;
+    font-family: 'Space Mono', Arial, Helvetica, sans-serif;
+    color: var(--dark-cyan);
+    text-align: right;
+    border: none;
+    background-color: var(--Very-light-cyan);
+    border-radius: 5px;
+    width: 100%;
+    color: var(--very-dark-cyan);
+    padding: .5rem 1rem;
+}
+input:focus {
+    outline: 2px solid var(--Strong-cyan);
+}
+input::placeholder {
+    color: var(--cyan);
+}
+.error-message {
+    color: rgb(223, 87, 87);
+    position: absolute;
+    right: 0;
+    display: none;
+}
+#bill {
+    background-image: url(../assets/icons/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
+#people {
+    background-image: url(../assets/icons/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
+body {
+    background-color: var(--light-cyan);
+}
+h1 {
+    color: var(--dark-cyan);
+    max-width: 7ch;
+    margin: 5vh auto;
+}
+main {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+    background-color: var(--White);
+    padding: 2rem;
+    border-radius: 25px 25px 0 0;
+    color: var(--dark-cyan);
+    margin: 5vh auto 0 auto;
+}
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.tip label {
+    padding: 10px 0;
+}
+.button-area {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 3rem 3rem 3rem;
+    gap: 1rem;
+}
+.tip button {
+    background-color: var(--very-dark-cyan);
+    font-weight: 600;
+    font-size: 1.4rem;
+    border: none;
+    color: var(--Very-light-cyan);
+    border-radius: 5px;
+    cursor: pointer;
+}
+button.selecionado {
+    background-color: var(--Strong-cyan) !important;
+    color: var(--very-dark-cyan) !important;
+}
+input.selecionado {
+    outline: 2px solid var(--Strong-cyan);
+}
+main .calc-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.output-area {
+    background-color: var(--very-dark-cyan);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    gap: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.output-values {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+.output-area section {
+    display: flex;
+    justify-content: space-between;
+}
+.output-area button {
+    width: 100%;
+    border: none;
+    background-color: var(--Strong-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+h2 {
+    color: var(--Strong-cyan);
+    font-size: 2rem;
+}
+h3 {
+    color: var(--Very-light-cyan);
+}
+h4 {
+    color: var(--cyan);
+}
+@media (max-width: 350px) {
+    main {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .button-area  {
+        gap: 4px;
+    }
+}
+@media (min-width: 750px) {
+    main {
+        border-radius: 25px;
+        margin: 0 auto 5rem auto;
+    }
+    .button-area {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 3rem 3rem;
+    }
+}
